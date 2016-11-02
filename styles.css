@@ -40,6 +40,10 @@ body{
   font-size: 25px;
   margin: 30px 2px;
 }
+  #submit:hover{
+    color: #E6940E;
+    -webkit-transition: all .3s ease-in-out;
+  }
 #location-search{
   height: 60px;
   width: 450px;
@@ -47,8 +51,6 @@ body{
   margin-top: 40px;
   text-align: left;
   padding-left: 7px;
-}
-#location-search{
   border: 0.1rem solid #003366;
 }
 h1{
@@ -59,8 +61,8 @@ h1{
   -webkit-transition: all .3s ease-in-out;
 }
   h1:hover{
-          -webkit-transform: scale(1.2);
-          color: #E6940E;
+    -webkit-transform: scale(1.2);
+    color: #E6940E;
   }
 
 /*Show Page*/
@@ -117,3 +119,7 @@ p{
   font-size: 25px;
   margin: 30px 2px;
 }
+  #no:hover ,#yes:hover{
+    -webkit-transition: all .3s ease-in-out;
+    color: #E6940E;
+  }
