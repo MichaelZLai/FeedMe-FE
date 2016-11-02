@@ -41,7 +41,7 @@ body{
   margin: 30px 2px;
 }
   #submit:hover{
-    color: #E6940E;
+    background-color: #E6940E;
     -webkit-transition: all .3s ease-in-out;
   }
 #location-search{
@@ -121,5 +121,5 @@ p{
 }
   #no:hover ,#yes:hover{
     -webkit-transition: all .3s ease-in-out;
-    color: #E6940E;
+    background-color: #E6940E;
   }
