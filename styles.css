@@ -60,6 +60,7 @@ h1{
 }
   h1:hover{
           -webkit-transform: scale(1.2);
+          color: #E6940E;
   }
 
 /*Show Page*/
