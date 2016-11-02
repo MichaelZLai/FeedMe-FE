@@ -43,6 +43,7 @@ body{
   #submit:hover{
     background-color: #E6940E;
     -webkit-transition: all .3s ease-in-out;
+    border: 1px solid #003366;
   }
 #location-search{
   height: 60px;
@@ -122,4 +123,5 @@ p{
   #no:hover ,#yes:hover{
     -webkit-transition: all .3s ease-in-out;
     background-color: #E6940E;
+    border: 1px solid #003366;
   }
