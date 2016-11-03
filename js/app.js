@@ -30,7 +30,7 @@ angular
   ])
 
 
-  function mapFunction(long, lat,img_url,address,name,phone){
+  function mapFunction(long, lat,img_url,address,name,phone,r_img_url){
     mapboxgl.accessToken = 'pk.eyJ1IjoibWFya3M4MjgiLCJhIjoiY2l1dTZ0eG9vMDJhMzJ5b2VwdWpjbHJmeSJ9.pI-acZvMrbtOHhfSaui34Q';
     map = new mapboxgl.Map({
         container: 'map', // container id
@@ -64,7 +64,7 @@ angular
     el.className = 'marker';
     el.style.backgroundImage = 'url('+img_url+')';
     var popup = new mapboxgl.Popup({offset:[0, -30]})
-    .setHTML(`<p>${name}</p><p>${address}</p><p>${phone}</p>`);
+    .setHTML(`<img src='${r_img_url}'><p>${name}</p><p>${address}</p><p>${phone}</p>`);
     el.style.width = marker.properties.iconSize[0] + 'px';
     el.style.height = marker.properties.iconSize[1] + 'px';
 
@@ -100,7 +100,8 @@ angular
       vm.url = vm.business.url
       vm.img_url = vm.business.image_url
       vm.yelp_id = vm.business.id
-      mapFunction(vm.long, vm.lat, vm.img_url, vm.addressArr,vm.name, vm.phone)
+      vm.r_img_url = vm.business.rating_img_url
+      mapFunction(vm.long, vm.lat, vm.img_url, vm.addressArr,vm.name, vm.phone,vm.r_img_url)
 
     }
 
