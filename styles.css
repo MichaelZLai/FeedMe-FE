@@ -4,6 +4,8 @@
 }
 body{
   background-image: url('http://rubinsworld.com/chicken-skewers.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 /*Welcome Page*/
 .pages{
