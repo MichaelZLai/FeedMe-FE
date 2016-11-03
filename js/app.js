@@ -29,8 +29,7 @@ angular
     FeedMeShow
   ])
 
-
-  function mapFunction(long, lat,img_url,address,name,phone,r_img_url){
+  function mapFunction(long, lat,img_url,address,name,phone,rating_url){
     mapboxgl.accessToken = 'pk.eyJ1IjoibWFya3M4MjgiLCJhIjoiY2l1dTZ0eG9vMDJhMzJ5b2VwdWpjbHJmeSJ9.pI-acZvMrbtOHhfSaui34Q';
     map = new mapboxgl.Map({
         container: 'map', // container id
@@ -38,6 +37,7 @@ angular
         center: [long, lat], // starting position
         zoom: 14 // starting zoom
     });
+
     // Define Marker geolocation
     var geojson = {
         "type": "FeatureCollection",
@@ -64,7 +64,7 @@ angular
     el.className = 'marker';
     el.style.backgroundImage = 'url('+img_url+')';
     var popup = new mapboxgl.Popup({offset:[0, -30]})
-    .setHTML(`<img src='${r_img_url}'><p>${name}</p><p>${address}</p><p>${phone}</p>`);
+    .setHTML(`<img src='${rating_url}'><p>${name}</p><p>${address}</p><p>${phone}</p>`);
     el.style.width = marker.properties.iconSize[0] + 'px';
     el.style.height = marker.properties.iconSize[1] + 'px';
 
@@ -72,7 +72,8 @@ angular
     new mapboxgl.Marker(el, {offset: [-marker.properties.iconSize[0] / 2, -marker.properties.iconSize[1] / 2]})
         .setLngLat(marker.geometry.coordinates)
         .setPopup(popup)
-        .addTo(map);
+        .addTo(map)
+
 });
 }
 
@@ -98,6 +99,7 @@ angular
     //Dont Mind Me, I'm just a bunch of references
     this.setBizVars = function (biz) {
       vm.business = vm.businessArr[biz]
+      console.log(vm.business.rating_img_url)
       vm.name = vm.business.name
       vm.addressArr = vm.business.location.display_address
       vm.addressJoin = vm.addressArr.join(' ')
@@ -111,7 +113,7 @@ angular
       mapFunction(vm.long, vm.lat, vm.img_url, vm.addressArr,vm.name, vm.phone,vm.r_img_url)
     }
 
-    //initiate loader
+    // initiate loader for show
     loader()
 
     //yes button function (logs the current business into our visits database)
@@ -146,13 +148,13 @@ angular
   }
   //initial ajax call to our api for yelp data
   function FoodFactory($resource){
-      return $resource("https://feedme-be.herokuapp.com/foods/:id", {}, {
+      return $resource("http://localhost:3000/foods/:id", {}, {
         update: {method: "PUT"}
       })
     }
   //send yes information to visits table in our api
   function VisitFactory($resource){
-      return $resource("https://feedme-be.herokuapp.com/visits/:id", {}, {
+      return $resource("http://localhost:3000/visits/:id", {}, {
         update: {method: "PUT"}
       })
     }
