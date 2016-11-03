@@ -120,8 +120,9 @@ angular
     this.visit = new VisitFactory()
     this.sendVisit = function(){
       this.visit.$save({name: vm.name, address:vm.addressJoin, phone: vm.phone, yelp_id: vm.yelp_id }).then(
-        loader(),function(){
-        $state.go("new")
+        function(){
+          loader(),
+          $state.go("new")
       })
     }
 
