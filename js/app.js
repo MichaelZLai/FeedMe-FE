@@ -86,6 +86,13 @@ angular
     }
   }
 
+  function loader(){pleaseWait({
+      logo: "http://emojipaste.com/assets/img/emoji/1f606.png",
+      backgroundColor: 'lightblue',
+      loadingHtml: "<h3>A good day to you fine user!</h3>"
+    }).finish()
+  }
+
   function FeedMeShow(FoodFactory,VisitFactory, $state){
     var vm = this
     //Dont Mind Me, I'm just a bunch of references
@@ -102,13 +109,15 @@ angular
       vm.yelp_id = vm.business.id
       vm.r_img_url = vm.business.rating_img_url
       mapFunction(vm.long, vm.lat, vm.img_url, vm.addressArr,vm.name, vm.phone,vm.r_img_url)
-
     }
+
+    //initiate loader
+    loader()
 
     //yes button function (logs the current business into our visits database)
     this.visit = new VisitFactory()
     this.sendVisit = function(){
-      this.visit.$save({name: vm.name, address:vm.addressJoin, phone: vm.phone, yelp_id: vm.yelp_id }).then(function(){
+      this.visit.$save({name: vm.name, address:vm.addressJoin, phone: vm.phone, yelp_id: vm.yelp_id }).then(loader(),function(){
         $state.go("new")
       })
     }
