@@ -33,17 +33,17 @@ The back-end application provides a proxy-API to Yelp to feed the front-end for 
 * JQuery
 * Yelp Search API
 * Mapbox API
+* Pleasewait.js
 
 
 ### Installing
 
 The FeedMe application is located on the gitHub repository.
 
-To install, clone a copy from github repository the username is MichaelZLai the repository is named FeedMe.git
+To install, clone a copy from github repository the username is MichaelZLai the repository is named FeedMe
 
 ```
-git clone git@github.com:MichaelZLai/FeedMe.git
-
+git clone git@github.com:MichaelZLai/FeedMe-FE.git
 ```
 
 ## Back-end Installation.
