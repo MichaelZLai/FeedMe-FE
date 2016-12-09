@@ -1,6 +1,6 @@
 # FeedMe - FE (Front End)
 
-*** This is the Angular Front End. For the API backend, Please visit [FeedMe - BE (Back End)](https://github.com/MichaelZLai/FeedMe-BE)
+*** This is the Angular Front End. For the API backend, Please visit [FeedMe - BE (Back End)](https://github.com/MichaelZLai/FeedMe-BE) ***
 
 Feeling Hungry?
 
@@ -10,7 +10,7 @@ Feed Me helps out of town and local patrons discover new restaurants in any area
 
 ## Installation
 
-*** Please note: You need to have [FeedMe - BE (Back End)](https://github.com/MichaelZLai/FeedMe-BE) cloned and running before FeedMe is rendered.
+*** Please note: You need to have [FeedMe - BE (Back End)](https://github.com/MichaelZLai/FeedMe-BE) cloned and running before FeedMe is rendered. ***
 
 ```
 git clone git@github.com:MichaelZLai/FeedMe-FE.git
@@ -57,7 +57,7 @@ hs
 ![mapbox](./images/mapbox.png)
 ![angular](./images/AngularJS.png)
 ![jquery](./images/jquery.png)
-![pleasewait](./images/pleasewait.png)
+![pleasewait](./images/pleasewait.jpg)
 
 ## Authors
 * **Michael Lai**
